@@ -1,0 +1,18 @@
+background: linear-gradient(90deg, #2196F3, #D62828);
+button {
+    background: #D62828;
+    color: white;
+    border-radius: 30px;
+}
+
+button:hover {
+    background: #2196F3;
+    transform: scale(1.05);
+}
+.card {
+    background: white;
+    border-left: 8px solid #2196F3;
+    border-bottom: 8px solid #D62828;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.15);
+}

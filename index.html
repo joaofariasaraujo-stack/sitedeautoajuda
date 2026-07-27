@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portal de Apoio ao Estudante</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://kit.fontawesome.com/7a4d4b5c4d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+<header>
+<h1>Portal de Apoio ao Estudante</h1>
+
+<nav>
+<a href="index.html">Início</a>
+<a href="escuta.html">Portal de Escuta</a>
+<a href="quiz.html">Quiz</a>
+<a href="referencias.html">Referências</a>
+</nav>
+
+<button onclick="modoEscuro()">🌙 Modo Escuro</button>
+<button onclick="aumentarFonte()">A+</button>
+
+</header>
+
+<section class="banner">
+
+<img src="img/escola.jpg" alt="Escola">
+
+<h2>Bem-vindo!</h2>
+
+<p>
+Aqui você encontrará informações, orientações e apoio sobre situações
+vivenciadas no ambiente escolar.
+</p>
+
+</section>
+
+<footer>
+
+<p>Projeto Escolar - 2026</p>
+
+</footer>
+
+<button id="topo" onclick="topFunction()">⬆</button>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Portal de Escuta</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+<h1>Portal de Escuta</h1>
+
+<nav>
+<a href="index.html">Início</a>
+<a href="escuta.html">Portal de Escuta</a>
+<a href="quiz.html">Quiz</a>
+<a href="referencias.html">Referências</a>
+</nav>
+
+</header>
+
+<main>
+
+<h2>Escreva seu desabafo</h2>
+
+<form onsubmit="acolher(); return false;">
+
+<textarea rows="8" cols="60" placeholder="Digite aqui..."></textarea>
+
+<br><br>
+
+<button>Enviar</button>
+
+</form>
+
+<p id="mensagem"></p>
+
+<h3>Frases Motivacionais</h3>
+
+<ul>
+
+<li>Você não está sozinho.</li>
+
+<li>Pedir ajuda é um ato de coragem.</li>
+
+<li>Todos merecem respeito.</li>
+
+</ul>
+
+<h3>Procure ajuda</h3>
+
+<p>
+Converse com um professor, pedagogo, direção da escola,
+familiares ou outro adulto de confiança.
+</p>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Quiz</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+<h1>Quiz</h1>
+
+<nav>
+<a href="index.html">Início</a>
+<a href="escuta.html">Portal de Escuta</a>
+<a href="quiz.html">Quiz</a>
+<a href="referencias.html">Referências</a>
+</nav>
+
+</header>
+
+<main>
+
+<form id="quiz">
+
+<p>1. Bullying é uma brincadeira?</p>
+
+<input type="radio" name="q1" value="0">Sim
+<input type="radio" name="q1" value="1">Não
+
+<p>2. Devemos respeitar os colegas?</p>
+
+<input type="radio" name="q2" value="1">Sim
+<input type="radio" name="q2" value="0">Não
+
+<p>3. Senha "123456" é segura?</p>
+
+<input type="radio" name="q3" value="0">Sim
+<input type="radio" name="q3" value="1">Não
+
+<p>4. Se um amigo sofre bullying você deve ajudar?</p>
+
+<input type="radio" name="q4" value="1">Sim
+<input type="radio" name="q4" value="0">Não
+
+<p>5. Conversar com um adulto é importante?</p>
+
+<input type="radio" name="q5" value="1">Sim
+<input type="radio" name="q5" value="0">Não
+
+<br><br>
+
+<button type="button" onclick="corrigirQuiz()">Ver Resultado</button>
+
+</form>
+
+<h2 id="resultado"></h2>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Referências</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+<h1>Referências</h1>
+
+<nav>
+<a href="index.html">Início</a>
+<a href="escuta.html">Portal de Escuta</a>
+<a href="quiz.html">Quiz</a>
+<a href="referencias.html">Referências</a>
+</nav>
+
+</header>
+
+<ul>
+
+<li><a href="https://www.gov.br/mec/" target="_blank">Ministério da Educação</a></li>
+
+<li><a href="https://www.gov.br/saude/" target="_blank">Ministério da Saúde</a></li>
+
+<li><a href="https://www.unicef.org/brazil/" target="_blank">UNICEF Brasil</a></li>
+
+<li><a href="https://www.safernet.org.br/" target="_blank">SaferNet Brasil</a></li>
+
+</ul>
+
+</body>
+</html>
