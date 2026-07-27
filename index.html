@@ -1,133 +1,370 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Portal do Estudante</title>
+    <title>Portal de Apoio ao Estudante | Saúde Mental</title>
 
-    <!-- Fonte -->
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js" defer></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <!-- Ícones -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<button id="topo">
+<i class="fa-solid fa-arrow-up"></i>
+</button>
+
 <header>
 
-    <div class="logo">
-        <i class="fa-solid fa-heart"></i>
-        <h1>Portal do Estudante</h1>
-    </div>
+<h1>Portal de Apoio ao Estudante</h1>
 
-    <nav>
+<p>Saúde Mental • Respeito • Empatia • Acolhimento</p>
 
-        <a href="index.html">Início</a>
+<nav>
 
-        <a href="escuta.html">Portal de Escuta</a>
+<a href="#inicio">Início</a>
 
-        <a href="quiz.html">Quiz</a>
+<a href="#sobre">Saúde Mental</a>
 
-        <a href="referencias.html">Referências</a>
+<a href="#escuta">Portal de Escuta</a>
 
-    </nav>
+<a href="#quiz">Quiz</a>
+
+<a href="#fontes">Fontes</a>
+
+</nav>
 
 </header>
 
-<section class="hero">
+<section class="hero" id="inicio">
 
-    <div class="texto">
+<div class="hero-text">
 
-        <h2>
-            Seu espaço para aprender,
-            conversar e crescer.
-        </h2>
+<h2>Você não está sozinho.</h2>
 
-        <p>
+<p>
 
-            Aqui você encontra um lugar acolhedor para aprender mais sobre
-            respeito, convivência, bullying, segurança digital e onde procurar
-            ajuda quando precisar.
+Este portal foi criado para incentivar o respeito, a empatia e o acolhimento
+dentro da escola.
 
-        </p>
+Aqui você encontrará informações importantes sobre saúde mental,
+formas de buscar ajuda e orientações para cuidar de você e das pessoas ao seu redor.
 
-        <a href="escuta.html" class="botao">
-            Quero conhecer
-        </a>
+</p>
 
-    </div>
+</div>
 
-    <div class="imagem">
+<div class="hero-img">
 
-        <img src="img/escola.png" alt="Estudantes">
+<img src="https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?w=900"
+alt="Saúde Mental">
 
-    </div>
+</div>
 
 </section>
 
-<section class="cards">
+<section id="sobre">
 
-    <div class="card">
+<h2><i class="fa-solid fa-brain"></i> Saúde Mental</h2>
 
-        <i class="fa-solid fa-comments"></i>
+<div class="cards">
 
-        <h3>Portal de Escuta</h3>
+<div class="card">
 
-        <p>
-            Um espaço para escrever um desabafo e receber
-            uma mensagem de acolhimento.
-        </p>
+<i class="fa-solid fa-heart"></i>
 
-    </div>
+<h3>Autocuidado</h3>
 
-    <div class="card">
+<p>
 
-        <i class="fa-solid fa-brain"></i>
+Dormir bem, alimentar-se corretamente, praticar atividades físicas
+e conversar com pessoas de confiança ajudam a manter a saúde mental.
 
-        <h3>Quiz</h3>
+</p>
 
-        <p>
-            Teste seus conhecimentos com perguntas rápidas
-            e descubra sua pontuação.
-        </p>
+</div>
 
-    </div>
+<div class="card">
 
-    <div class="card">
+<i class="fa-solid fa-people-group"></i>
 
-        <i class="fa-solid fa-book"></i>
+<h3>Empatia</h3>
 
-        <h3>Informação</h3>
+<p>
 
-        <p>
-            Conheça materiais confiáveis sobre convivência,
-            respeito e segurança.
-        </p>
+Cada pessoa enfrenta desafios diferentes.
+Escutar sem julgar pode fazer uma enorme diferença.
 
-    </div>
+</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-hand-holding-heart"></i>
+
+<h3>Procure Ajuda</h3>
+
+<p>
+
+Quando os sentimentos estiverem difíceis de lidar,
+converse com professores, familiares,
+pedagogo ou outro adulto de confiança.
+
+</p>
+
+</div>
+
+</div>
 
 </section>
 
-<footer>
+<section class="carrossel">
 
-    <p>
-        © 2026 • Portal do Estudante
-    </p>
+<h2>Momentos de Bem-estar</h2>
+
+<div class="slider">
+
+<img class="slide active"
+src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200">
+
+<img class="slide"
+src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=1200">
+
+<img class="slide"
+src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200">
+
+</div>
+
+</section>
+
+<section id="escuta">
+
+<h2><i class="fa-solid fa-comments"></i> Portal de Escuta</h2>
+
+<p>
+
+Este espaço é apenas uma simulação para demonstrar acolhimento.
+
+</p>
+
+<form id="formEscuta">
+
+<textarea
+id="desabafo"
+placeholder="Escreva aqui como você está se sentindo..."
+required>
+
+</textarea>
+
+<button type="submit">
+
+Enviar Desabafo
+
+</button>
+
+</form>
+
+<div id="mensagem"></div>
+
+<h3>Frases Motivacionais</h3>
+
+<ul>
+
+<li>🌻 Você é mais forte do que imagina.</li>
+
+<li>🌻 Pedir ajuda é um ato de coragem.</li>
+
+<li>🌻 Nenhum sentimento dura para sempre.</li>
+
+<li>🌻 Sua vida tem valor.</li>
+
+<li>🌻 Um passo de cada vez.</li>
+
+</ul>
+
+<div class="orientacao">
+
+<h3>Quando procurar ajuda?</h3>
+
+<p>
+
+Caso esteja passando por dificuldades emocionais,
+converse com:
+
+</p>
+
+<ul>
+
+<li>Professor</li>
+
+<li>Pedagogo</li>
+
+<li>Direção Escolar</li>
+
+<li>Familiares</li>
+
+<li>Adulto de confiança</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section id="quiz">
+
+<h2>Quiz da Saúde Mental</h2>
+
+<form id="quizForm">
+
+<div class="pergunta">
+
+<p>1. Um amigo está muito triste há vários dias. O que fazer?</p>
+
+<label><input type="radio" name="q1" value="1"> Conversar e incentivar procurar ajuda.</label>
+
+<label><input type="radio" name="q1" value="0"> Ignorar.</label>
+
+</div>
+
+<div class="pergunta">
+
+<p>2. Respeitar os sentimentos das pessoas demonstra empatia?</p>
+
+<label><input type="radio" name="q2" value="1"> Sim</label>
+
+<label><input type="radio" name="q2" value="0"> Não</label>
+
+</div>
+
+<div class="pergunta">
+
+<p>3. Pedir ajuda é sinal de fraqueza?</p>
+
+<label><input type="radio" name="q3" value="0"> Sim</label>
+
+<label><input type="radio" name="q3" value="1"> Não</label>
+
+</div>
+
+<div class="pergunta">
+
+<p>4. O bullying pode prejudicar a saúde mental?</p>
+
+<label><input type="radio" name="q4" value="1"> Sim</label>
+
+<label><input type="radio" name="q4" value="0"> Não</label>
+
+</div>
+
+<div class="pergunta">
+
+<p>5. Dormir bem ajuda na saúde mental?</p>
+
+<label><input type="radio" name="q5" value="1"> Sim</label>
+
+<label><input type="radio" name="q5" value="0"> Não</label>
+
+</div>
+
+<button type="button" onclick="corrigirQuiz()">
+
+Ver Resultado
+
+</button>
+
+</form>
+
+<h3 id="resultadoQuiz"></h3>
+
+</section>
+
+<section class="acessibilidade">
+
+<h2>Acessibilidade</h2>
+
+<button onclick="modoEscuro()">
+
+Modo Escuro
+
+</button>
+
+<button onclick="aumentarFonte()">
+
+Aumentar Fonte
+
+</button>
+
+<button onclick="altoContraste()">
+
+Alto Contraste
+
+</button>
+
+</section>
+
+<footer id="fontes">
+
+<h2>Fontes de Pesquisa</h2>
+
+<ul>
+
+<li>
+<a href="https://www.gov.br/saude/" target="_blank">
+Ministério da Saúde
+</a>
+</li>
+
+<li>
+<a href="https://www.who.int/" target="_blank">
+Organização Mundial da Saúde (OMS)
+</a>
+</li>
+
+<li>
+<a href="https://bvsms.saude.gov.br/" target="_blank">
+Biblioteca Virtual em Saúde
+</a>
+</li>
+
+<li>
+<a href="https://www.unicef.org/brazil/" target="_blank">
+UNICEF Brasil
+</a>
+</li>
+
+<li>
+<a href="https://www.fiocruz.br/" target="_blank">
+Fiocruz
+</a>
+</li>
+
+</ul>
+
+<p>
+
+Projeto desenvolvido para conscientização sobre Saúde Mental.
+
+</p>
 
 </footer>
 
-<button id="topo">
-    ↑
-</button>
-
-<script src="script.js"></script>
-
 </body>
+
 </html>
