@@ -1,74 +1,287 @@
-/* CORES PRINCIPAIS */
+/* =================================
+   VIVAMENTE - STYLE PROFISSIONAL
+   Saúde Mental
+================================= */
+
+
+* {
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+
+}
+
+
+html {
+
+    scroll-behavior:smooth;
+
+}
+
 
 :root {
 
-    --vermelho: #c1121f;
-    --azul: #219ebc;
-    --azul-claro: #8ecae6;
-    --fundo: #f4f9ff;
-    --branco: #ffffff;
-    --texto: #1d3557;
+    --vermelho:#c1121f;
+    --azul:#219ebc;
+    --azul-claro:#8ecae6;
+    --fundo:#f4f9ff;
+    --texto:#1d3557;
+    --branco:#ffffff;
 
 }
 
 
-
-/* FUNDO GERAL */
 
 body {
 
-    background: var(--fundo);
-    color: var(--texto);
+    background:var(--fundo);
+
+    color:var(--texto);
+
+    transition:.4s;
 
 }
 
 
 
-/* CABEÇALHO ESTILO PRAJIED */
+
+/* ===============================
+HEADER
+================================ */
+
 
 header {
 
-    background: linear-gradient(
+    background:
+
+    linear-gradient(
         90deg,
-        #c1121f,
-        #219ebc
+        var(--vermelho),
+        var(--azul)
     );
 
     color:white;
 
-    border-bottom:8px solid #8ecae6;
+    text-align:center;
+
+    padding:30px;
+
+    border-bottom:8px solid var(--azul-claro);
 
 }
 
 
 
-/* MENU */
+.logo {
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+
+.logo i {
+
+    font-size:40px;
+
+}
+
+
+header h1 {
+
+    font-size:40px;
+
+}
+
+
+
+header p {
+
+    font-size:18px;
+
+    margin:10px;
+
+}
+
+
+
+
+
+/* ===============================
+MENU
+================================ */
+
+
+nav {
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+nav a {
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    padding:10px 20px;
+
+    border-radius:30px;
+
+    transition:.3s;
+
+}
+
+
 
 nav a:hover {
 
     background:white;
 
-    color:#219ebc;
+    color:var(--azul);
 
 }
 
 
 
-/* TÍTULOS */
+
+
+/* ===============================
+SEÇÕES
+================================ */
+
+
+section {
+
+    padding:60px 10%;
+
+    display:block;
+
+}
+
+
 
 h2 {
 
-    color:#c1121f;
+    text-align:center;
+
+    color:var(--vermelho);
+
+    margin-bottom:35px;
+
+    font-size:32px;
 
 }
 
 
 
-/* BOTÕES */
+
+
+/* ===============================
+HERO
+================================ */
+
+
+.hero {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:40px;
+
+}
+
+
+
+.hero-text {
+
+    flex:1;
+
+}
+
+
+
+.hero-text h2 {
+
+    text-align:left;
+
+    color:var(--azul);
+
+    font-size:42px;
+
+}
+
+
+
+.hero-text p {
+
+    font-size:18px;
+
+}
+
+
+
+.hero-image {
+
+    flex:1;
+
+}
+
+
+
+.hero-image img {
+
+    width:100%;
+
+    border-radius:30px;
+
+    box-shadow:0 10px 30px #0003;
+
+}
+
+
+
+
+/* ===============================
+BOTÕES
+================================ */
+
 
 button {
 
-    background:#c1121f;
+    background:var(--vermelho);
+
+    color:white;
+
+    border:none;
+
+    padding:14px 25px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    transition:.3s;
 
 }
 
@@ -76,19 +289,59 @@ button {
 
 button:hover {
 
-    background:#219ebc;
+    background:var(--azul);
+
+    transform:scale(1.05);
 
 }
 
 
 
-/* CARDS */
+
+/* ===============================
+CARDS
+================================ */
+
+
+.cards {
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+
+}
+
+
 
 .card {
 
     background:white;
 
-    border-top:8px solid #219ebc;
+    padding:30px;
+
+    text-align:center;
+
+    border-radius:25px;
+
+    border-top:8px solid var(--azul);
+
+    box-shadow:
+    0 10px 25px #0002;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+
+.card:hover {
+
+    transform:translateY(-10px);
 
 }
 
@@ -96,29 +349,73 @@ button:hover {
 
 .card i {
 
-    color:#c1121f;
+    color:var(--vermelho);
+
+    font-size:45px;
+
+    margin-bottom:15px;
 
 }
 
 
 
-/* PORTAL DE ESCUTA */
+.card span {
 
-#escuta {
+    color:var(--azul);
 
-    background:
-
-    linear-gradient(
-        135deg,
-        #219ebc,
-        #8ecae6
-    );
+    font-weight:bold;
 
 }
 
 
 
-/* ÁREA DE EMOÇÕES */
+
+
+/* ===============================
+CONTEÚDOS
+================================ */
+
+
+#conteudoExtra {
+
+    margin-top:40px;
+
+}
+
+
+
+.informacao {
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    box-shadow:0 10px 25px #0002;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.informacao h3 {
+
+    color:var(--azul);
+
+    font-size:25px;
+
+}
+
+
+
+
+
+/* ===============================
+HUMOR
+================================ */
+
 
 .humor {
 
@@ -126,39 +423,218 @@ button:hover {
 
     border-radius:30px;
 
+    text-align:center;
+
+}
+
+
+
+.emocoes {
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
 }
 
 
 
 .emocoes button {
 
-    background:#219ebc;
-
     font-size:35px;
 
-}
+    background:var(--azul);
 
+    width:80px;
 
-
-.emocoes button:hover {
-
-    background:#c1121f;
+    height:80px;
 
 }
 
 
 
-/* RODAPÉ */
+
+/* ===============================
+PORTAL ESCUTA
+================================ */
+
+
+#escuta {
+
+    background:
+
+    linear-gradient(
+        135deg,
+        var(--azul),
+        var(--azul-claro)
+    );
+
+    color:white;
+
+    border-radius:30px;
+
+}
+
+
+
+#escuta h2 {
+
+    color:white;
+
+}
+
+
+
+textarea {
+
+    width:100%;
+
+    height:160px;
+
+    padding:20px;
+
+    border-radius:20px;
+
+    border:none;
+
+    font-size:16px;
+
+}
+
+
+
+
+.acolhimento {
+
+    margin-top:20px;
+
+    background:white;
+
+    color:#222;
+
+    padding:25px;
+
+    border-radius:20px;
+
+}
+
+
+
+
+/* ===============================
+QUIZ
+================================ */
+
+
+.quiz-box {
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    box-shadow:0 10px 25px #0002;
+
+}
+
+
+
+.quiz-box p {
+
+    margin-top:25px;
+
+    font-weight:bold;
+
+}
+
+
+
+
+
+/* ===============================
+ACESSIBILIDADE
+================================ */
+
+
+.acessibilidade {
+
+    text-align:center;
+
+}
+
+
+
+
+/* ===============================
+BOTÃO TOPO
+================================ */
+
+
+#topo {
+
+    position:fixed;
+
+    right:20px;
+
+    bottom:20px;
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:999;
+
+}
+
+
+
+
+/* ===============================
+FOOTER
+================================ */
+
 
 footer {
 
-    background:#219ebc;
+    background:var(--azul);
+
+    color:white;
+
+    text-align:center;
+
+    padding:40px;
 
 }
 
 
 
-/* MODO ESCURO */
+footer li {
+
+    list-style:none;
+
+}
+
+
+
+
+
+/* ===============================
+MODO ESCURO
+================================ */
+
 
 .dark {
 
@@ -169,10 +645,73 @@ footer {
 }
 
 
+
 .dark .card,
-.dark .quiz-box,
-.dark .pergunta {
+.dark .informacao,
+.dark .quiz-box {
 
     background:#183b56;
+
+    color:white;
+
+}
+
+
+
+
+
+/* ===============================
+ALTO CONTRASTE
+================================ */
+
+
+.contraste {
+
+    filter:contrast(160%);
+
+}
+
+
+
+
+
+/* ===============================
+RESPONSIVO
+================================ */
+
+
+@media(max-width:850px){
+
+
+.hero {
+
+    flex-direction:column;
+
+}
+
+
+
+.hero-text h2 {
+
+    font-size:30px;
+
+}
+
+
+
+section {
+
+    padding:40px 5%;
+
+}
+
+
+
+header h1 {
+
+    font-size:30px;
+
+}
+
 
 }
