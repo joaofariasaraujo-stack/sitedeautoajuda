@@ -1,275 +1,439 @@
-// ===============================
-// PORTAL DE ESCUTA
-// ===============================
+// =====================================
+// ABRIR CONTEÚDOS DOS CARDS
+// =====================================
 
-const formulario = document.getElementById("formEscuta");
-const mensagem = document.getElementById("mensagem");
+function abrirConteudo(id) {
 
-formulario.addEventListener("submit", function (e) {
+    const conteudos = document.querySelectorAll(".informacao");
 
-    e.preventDefault();
+    conteudos.forEach(function(item){
 
-    const texto = document.getElementById("desabafo").value.trim();
+        item.style.display = "none";
 
-    if (texto === "") {
+    });
 
-        mensagem.innerHTML = `
-        <p style="color:red;">
-        Escreva um desabafo antes de enviar.
-        </p>
-        `;
 
-        return;
+    const escolhido = document.getElementById(id);
+
+
+    if(escolhido){
+
+        escolhido.style.display = "block";
+
+        escolhido.scrollIntoView({
+            behavior:"smooth"
+        });
+
     }
 
-    mensagem.innerHTML = `
-    <div class="mensagem-sucesso">
-        <h3>💙 Obrigado por compartilhar.</h3>
+}
 
-        <p>
-        Seus sentimentos são importantes.
-        Lembre-se de que você não precisa enfrentar tudo sozinho.
-        Sempre que precisar, converse com um professor,
-        pedagogo, direção da escola, familiares
-        ou outro adulto de confiança.
-        </p>
 
-        <p><strong>Você merece ser ouvido.</strong></p>
+
+// =====================================
+// MENSAGEM INICIAL
+// =====================================
+
+function abrirMensagem(){
+
+    alert(
+    "💙 Bem-vindo ao VivaMente!\n\n" +
+    "Aqui você encontrará informações para cuidar da sua saúde mental, " +
+    "desenvolver empatia e encontrar apoio."
+    );
+
+}
+
+
+
+
+
+// =====================================
+// PORTAL DE ESCUTA
+// =====================================
+
+
+function enviarDesabafo(){
+
+
+    const texto =
+    document.getElementById("desabafo").value;
+
+
+    const resposta =
+    document.getElementById("respostaEscuta");
+
+
+
+    if(texto.trim() === ""){
+
+
+        resposta.innerHTML =
+        `
+        <div class="erro">
+
+        ⚠️ Escreva algo antes de enviar.
+
+        </div>
+        `;
+
+
+        return;
+
+    }
+
+
+
+    resposta.innerHTML =
+
+    `
+    <div class="acolhimento">
+
+    <h3>
+    💙 Obrigado por compartilhar.
+    </h3>
+
+
+    <p>
+    Seus sentimentos são importantes.
+    Falar sobre o que sentimos é uma atitude de coragem.
+    </p>
+
+
+    <p>
+    Se precisar, procure um professor,
+    pedagogo, direção da escola,
+    familiares ou outro adulto de confiança.
+    </p>
+
+
+    <strong>
+    Você merece ser ouvido.
+    </strong>
+
+
     </div>
     `;
 
-    formulario.reset();
-
-});
 
 
-// ===============================
-// QUIZ
-// ===============================
+    document.getElementById("desabafo").value="";
 
-function corrigirQuiz() {
-
-    let pontos = 0;
-
-    const respostas = [
-        "q1",
-        "q2",
-        "q3",
-        "q4",
-        "q5"
-    ];
-
-    respostas.forEach(function (pergunta) {
-
-        const resposta = document.querySelector(
-            `input[name="${pergunta}"]:checked`
-        );
-
-        if (resposta) {
-
-            pontos += Number(resposta.value);
-
-        }
-
-    });
-
-    const resultado = document.getElementById("resultadoQuiz");
-
-    if (pontos === 5) {
-
-        resultado.innerHTML =
-            "🏆 Parabéns! Você acertou todas as perguntas!";
-
-    }
-
-    else if (pontos >= 3) {
-
-        resultado.innerHTML =
-            `😊 Você fez ${pontos}/5 pontos. Muito bem!`;
-
-    }
-
-    else {
-
-        resultado.innerHTML =
-            `📚 Você fez ${pontos}/5 pontos. Continue aprendendo sobre saúde mental.`;
-
-    }
 
 }
 
 
 
-// ===============================
-// MODO ESCURO
-// ===============================
 
-function modoEscuro() {
+
+
+
+
+// =====================================
+// SISTEMA DE HUMOR
+// =====================================
+
+
+function mostrarHumor(sentimento){
+
+
+    const resultado =
+    document.getElementById("resultadoHumor");
+
+
+    resultado.innerHTML =
+
+    `
+    Hoje você informou que está:
+    <strong>${sentimento}</strong>
+    <br><br>
+
+    Lembre-se:
+    todos os sentimentos são importantes.
+    Cuide de você. 💙
+
+    `;
+
+}
+
+
+
+
+
+
+
+// =====================================
+// QUIZ
+// =====================================
+
+
+let pontosQuiz = 0;
+
+let respostasRespondidas = 0;
+
+
+
+function quizResposta(correta){
+
+
+    respostasRespondidas++;
+
+
+
+    if(correta){
+
+        pontosQuiz++;
+
+    }
+
+
+
+    if(respostasRespondidas === 3){
+
+
+        const resultado =
+        document.getElementById("resultadoQuiz");
+
+
+
+        if(pontosQuiz === 3){
+
+
+            resultado.innerHTML =
+            "🏆 Excelente! Você demonstrou conhecimento sobre saúde mental.";
+
+
+        }
+
+        else if(pontosQuiz === 2){
+
+
+            resultado.innerHTML =
+            "😊 Muito bem! Continue aprendendo sobre cuidado e empatia.";
+
+
+        }
+
+        else{
+
+
+            resultado.innerHTML =
+            "📚 Continue estudando. Aprender sobre saúde mental ajuda a todos.";
+
+
+        }
+
+
+
+        pontosQuiz = 0;
+
+        respostasRespondidas = 0;
+
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+// =====================================
+// MODO ESCURO
+// =====================================
+
+
+function modoEscuro(){
+
 
     document.body.classList.toggle("dark");
 
+
 }
 
 
 
-// ===============================
-// ALTO CONTRASTE
-// ===============================
 
-function altoContraste() {
+
+
+
+// =====================================
+// ALTO CONTRASTE
+// =====================================
+
+
+function altoContraste(){
+
 
     document.body.classList.toggle("contraste");
 
+
 }
 
 
 
-// ===============================
+
+
+
+
+// =====================================
 // AUMENTAR FONTE
-// ===============================
+// =====================================
 
-let tamanhoFonte = 100;
 
-function aumentarFonte() {
+let fonteAtual = 100;
 
-    tamanhoFonte += 10;
 
-    document.body.style.fontSize = tamanhoFonte + "%";
+function aumentarFonte(){
+
+
+    fonteAtual += 10;
+
+
+    document.body.style.fontSize =
+    fonteAtual + "%";
+
 
 }
 
 
 
-// ===============================
-// BOTÃO VOLTAR AO TOPO
-// ===============================
 
-const btnTopo = document.getElementById("topo");
 
-window.addEventListener("scroll", function () {
 
-    if (window.scrollY > 300) {
 
-        btnTopo.style.display = "flex";
+
+// =====================================
+// VOLTAR AO TOPO
+// =====================================
+
+
+const botaoTopo =
+document.getElementById("topo");
+
+
+
+window.addEventListener("scroll",function(){
+
+
+    if(window.scrollY > 400){
+
+
+        botaoTopo.style.display="flex";
+
 
     }
 
-    else {
+    else{
 
-        btnTopo.style.display = "none";
+
+        botaoTopo.style.display="none";
+
 
     }
+
 
 });
 
-btnTopo.addEventListener("click", function () {
+
+
+
+botaoTopo.addEventListener("click",function(){
+
 
     window.scrollTo({
 
-        top: 0,
+        top:0,
 
-        behavior: "smooth"
+        behavior:"smooth"
 
     });
+
 
 });
 
 
 
-// ===============================
-// CARROSSEL DE IMAGENS
-// ===============================
-
-const slides = document.querySelectorAll(".slide");
-
-let slideAtual = 0;
-
-function trocarSlide() {
-
-    slides[slideAtual].classList.remove("active");
-
-    slideAtual++;
-
-    if (slideAtual >= slides.length) {
-
-        slideAtual = 0;
-
-    }
-
-    slides[slideAtual].classList.add("active");
-
-}
-
-setInterval(trocarSlide, 3500);
 
 
 
-// ===============================
-// ANIMAÇÃO AO ROLAR A PÁGINA
-// ===============================
 
-const elementos = document.querySelectorAll("section");
 
-function revelar() {
 
-    elementos.forEach(function (elemento) {
+// =====================================
+// ANIMAÇÃO DE APARECER AO ROLAR
+// =====================================
 
-        const posicao = elemento.getBoundingClientRect().top;
 
-        const tela = window.innerHeight;
+const secoes =
+document.querySelectorAll("section");
 
-        if (posicao < tela - 100) {
 
-            elemento.classList.add("mostrar");
+
+function aparecer(){
+
+
+    secoes.forEach(function(secao){
+
+
+        const altura =
+        secao.getBoundingClientRect().top;
+
+
+
+        if(altura < window.innerHeight - 100){
+
+
+            secao.classList.add("mostrar");
+
 
         }
+
 
     });
 
+
 }
 
-window.addEventListener("scroll", revelar);
-
-revelar();
 
 
+window.addEventListener(
+"scroll",
+aparecer
+);
 
-// ===============================
-// FRASES MOTIVACIONAIS AUTOMÁTICAS
-// ===============================
 
-const frases = [
 
-    "🌻 Um dia de cada vez.",
+aparecer();
 
-    "💙 Você é importante.",
 
-    "😊 Pedir ajuda é coragem.",
 
-    "⭐ Você merece cuidado e respeito.",
 
-    "🌈 Toda tempestade passa."
 
-];
 
-let indice = 0;
 
-const lista = document.querySelector("#escuta ul");
 
-setInterval(function () {
+// =====================================
+// FECHAR CONTEÚDOS AO CARREGAR
+// =====================================
 
-    if (lista) {
 
-        lista.firstElementChild.innerHTML = frases[indice];
+window.addEventListener("load",function(){
 
-        indice++;
 
-        if (indice >= frases.length) {
+    const infos =
+    document.querySelectorAll(".informacao");
 
-            indice = 0;
 
-        }
+    infos.forEach(function(info){
 
-    }
+        info.style.display="none";
 
-}, 4000);
+    });
+
+
+});

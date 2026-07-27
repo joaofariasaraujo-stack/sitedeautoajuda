@@ -3,43 +3,58 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Portal de Apoio ao Estudante | Saúde Mental</title>
+<title>VivaMente | Portal de Apoio ao Estudante</title>
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 
-    <script src="script.js" defer></script>
+<script src="script.js" defer></script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 </head>
 
+
 <body>
+
+
+<!-- BOTÕES FLUTUANTES -->
 
 <button id="topo">
 <i class="fa-solid fa-arrow-up"></i>
 </button>
 
+
+
+<!-- CABEÇALHO -->
+
+
 <header>
 
-<h1>Portal de Apoio ao Estudante</h1>
+<div class="logo">
 
-<p>Saúde Mental • Respeito • Empatia • Acolhimento</p>
+<i class="fa-solid fa-heart-pulse"></i>
+
+<h1>VivaMente</h1>
+
+</div>
+
+
+<p>
+Portal de Apoio ao Estudante
+</p>
+
 
 <nav>
 
 <a href="#inicio">Início</a>
 
-<a href="#sobre">Saúde Mental</a>
+<a href="#saude">Saúde Mental</a>
 
 <a href="#escuta">Portal de Escuta</a>
 
@@ -49,321 +64,540 @@
 
 </nav>
 
+
 </header>
+
+
+
+
+
+<!-- BANNER PRINCIPAL -->
+
 
 <section class="hero" id="inicio">
 
+
 <div class="hero-text">
 
-<h2>Você não está sozinho.</h2>
+
+<h2>
+Você importa.
+Sua mente merece cuidado.
+</h2>
+
 
 <p>
 
-Este portal foi criado para incentivar o respeito, a empatia e o acolhimento
-dentro da escola.
-
-Aqui você encontrará informações importantes sobre saúde mental,
-formas de buscar ajuda e orientações para cuidar de você e das pessoas ao seu redor.
+Um espaço seguro para aprender sobre saúde mental,
+desenvolver empatia e encontrar apoio dentro e fora da escola.
 
 </p>
 
+
+<button onclick="abrirMensagem()">
+
+Começar jornada
+
+</button>
+
+
 </div>
 
-<div class="hero-img">
 
-<img src="https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?w=900"
-alt="Saúde Mental">
+
+<div class="hero-image">
+
+
+<img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=900"
+alt="Pessoa praticando bem-estar">
+
 
 </div>
+
 
 </section>
 
-<section id="sobre">
 
-<h2><i class="fa-solid fa-brain"></i> Saúde Mental</h2>
+
+
+
+
+<!-- SAÚDE MENTAL -->
+
+
+<section id="saude">
+
+
+<h2>
+<i class="fa-solid fa-brain"></i>
+Conheça e cuide da sua mente
+</h2>
+
+
 
 <div class="cards">
 
-<div class="card">
 
-<i class="fa-solid fa-heart"></i>
 
-<h3>Autocuidado</h3>
+<div class="card" onclick="abrirConteudo('autocuidado')">
+
+
+<i class="fa-solid fa-spa"></i>
+
+
+<h3>
+Autocuidado
+</h3>
+
 
 <p>
-
-Dormir bem, alimentar-se corretamente, praticar atividades físicas
-e conversar com pessoas de confiança ajudam a manter a saúde mental.
-
+Práticas para cuidar do corpo e da mente.
 </p>
+
+
+<span>
+Saiba mais →
+</span>
+
 
 </div>
 
-<div class="card">
 
-<i class="fa-solid fa-people-group"></i>
 
-<h3>Empatia</h3>
 
-<p>
 
-Cada pessoa enfrenta desafios diferentes.
-Escutar sem julgar pode fazer uma enorme diferença.
+<div class="card" onclick="abrirConteudo('empatia')">
 
-</p>
-
-</div>
-
-<div class="card">
 
 <i class="fa-solid fa-hand-holding-heart"></i>
 
-<h3>Procure Ajuda</h3>
+
+<h3>
+Empatia
+</h3>
+
+
+<p>
+Aprenda a compreender e respeitar sentimentos.
+</p>
+
+
+<span>
+Saiba mais →
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="card" onclick="abrirConteudo('ajuda')">
+
+
+<i class="fa-solid fa-user-doctor"></i>
+
+
+<h3>
+Procure Ajuda
+</h3>
+
+
+<p>
+Saiba quando e onde buscar apoio.
+</p>
+
+
+<span>
+Saiba mais →
+</span>
+
+
+</div>
+
+
+
+</div>
+
+
+
+<!-- CONTEÚDOS DOS CARDS -->
+
+
+<div id="conteudoExtra">
+
+
+
+<div id="autocuidado" class="informacao">
+
+
+<h3>🧠 Autocuidado</h3>
+
 
 <p>
 
-Quando os sentimentos estiverem difíceis de lidar,
-converse com professores, familiares,
-pedagogo ou outro adulto de confiança.
+Autocuidado são atitudes que ajudam a manter o equilíbrio emocional.
 
 </p>
 
-</div>
+
+<ul>
+
+<li>Ter uma rotina de sono saudável;</li>
+
+<li>Praticar atividades físicas;</li>
+
+<li>Reservar momentos para lazer;</li>
+
+<li>Conversar sobre sentimentos;</li>
+
+<li>Organizar tarefas e estudos.</li>
+
+</ul>
+
 
 </div>
+
+
+
+
+
+<div id="empatia" class="informacao">
+
+
+<h3>💙 Empatia</h3>
+
+
+<p>
+
+Empatia é a capacidade de compreender o sentimento de outra pessoa.
+
+</p>
+
+
+<ul>
+
+<li>Escutar sem julgar;</li>
+
+<li>Respeitar diferenças;</li>
+
+<li>Ajudar colegas;</li>
+
+<li>Evitar atitudes de bullying;</li>
+
+<li>Demonstrar acolhimento.</li>
+
+</ul>
+
+
+</div>
+
+
+
+
+
+<div id="ajuda" class="informacao">
+
+
+<h3>🤝 Procure Ajuda</h3>
+
+
+<p>
+
+Buscar apoio é uma atitude importante quando algo está difícil.
+
+</p>
+
+
+<ul>
+
+<li>Professor de confiança;</li>
+
+<li>Equipe pedagógica;</li>
+
+<li>Direção escolar;</li>
+
+<li>Familiares;</li>
+
+<li>Profissionais especializados.</li>
+
+</ul>
+
+
+</div>
+
+
+
+</div>
+
 
 </section>
 
-<section class="carrossel">
 
-<h2>Momentos de Bem-estar</h2>
 
-<div class="slider">
 
-<img class="slide active"
-src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200">
 
-<img class="slide"
-src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=1200">
 
-<img class="slide"
-src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200">
+
+
+<!-- COMO ESTOU ME SENTINDO -->
+
+
+<section class="humor">
+
+
+<h2>
+Como você está se sentindo hoje?
+</h2>
+
+
+<div class="emocoes">
+
+
+<button onclick="mostrarHumor('😊 Feliz')">
+😊
+</button>
+
+
+<button onclick="mostrarHumor('😐 Normal')">
+😐
+</button>
+
+
+<button onclick="mostrarHumor('😔 Triste')">
+😔
+</button>
+
+
+<button onclick="mostrarHumor('😰 Ansioso')">
+😰
+</button>
+
 
 </div>
 
+
+<h3 id="resultadoHumor"></h3>
+
+
 </section>
+
+
+
+
+
+
+
+<!-- PORTAL DE ESCUTA -->
+
 
 <section id="escuta">
 
-<h2><i class="fa-solid fa-comments"></i> Portal de Escuta</h2>
+
+<h2>
+<i class="fa-solid fa-comments"></i>
+Portal de Escuta
+</h2>
+
 
 <p>
 
-Este espaço é apenas uma simulação para demonstrar acolhimento.
+Este espaço permite escrever um desabafo simulado.
+Sua mensagem será usada apenas para demonstrar acolhimento.
 
 </p>
 
-<form id="formEscuta">
 
-<textarea
-id="desabafo"
-placeholder="Escreva aqui como você está se sentindo..."
-required>
 
-</textarea>
+<textarea id="desabafo"
+placeholder="Digite aqui o que você está sentindo..."></textarea>
 
-<button type="submit">
 
-Enviar Desabafo
+
+<button onclick="enviarDesabafo()">
+
+Enviar
 
 </button>
 
-</form>
 
-<div id="mensagem"></div>
 
-<h3>Frases Motivacionais</h3>
+<div id="respostaEscuta"></div>
 
-<ul>
 
-<li>🌻 Você é mais forte do que imagina.</li>
-
-<li>🌻 Pedir ajuda é um ato de coragem.</li>
-
-<li>🌻 Nenhum sentimento dura para sempre.</li>
-
-<li>🌻 Sua vida tem valor.</li>
-
-<li>🌻 Um passo de cada vez.</li>
-
-</ul>
-
-<div class="orientacao">
-
-<h3>Quando procurar ajuda?</h3>
-
-<p>
-
-Caso esteja passando por dificuldades emocionais,
-converse com:
-
-</p>
-
-<ul>
-
-<li>Professor</li>
-
-<li>Pedagogo</li>
-
-<li>Direção Escolar</li>
-
-<li>Familiares</li>
-
-<li>Adulto de confiança</li>
-
-</ul>
-
-</div>
 
 </section>
+
+
+
+
+
+
+
+<!-- QUIZ -->
+
 
 <section id="quiz">
 
-<h2>Quiz da Saúde Mental</h2>
 
-<form id="quizForm">
+<h2>
+Quiz da Saúde Mental
+</h2>
 
-<div class="pergunta">
 
-<p>1. Um amigo está muito triste há vários dias. O que fazer?</p>
 
-<label><input type="radio" name="q1" value="1"> Conversar e incentivar procurar ajuda.</label>
+<div class="quiz-box">
 
-<label><input type="radio" name="q1" value="0"> Ignorar.</label>
 
-</div>
+<p>
+1 - Respeitar os sentimentos de alguém demonstra empatia?
+</p>
 
-<div class="pergunta">
 
-<p>2. Respeitar os sentimentos das pessoas demonstra empatia?</p>
-
-<label><input type="radio" name="q2" value="1"> Sim</label>
-
-<label><input type="radio" name="q2" value="0"> Não</label>
-
-</div>
-
-<div class="pergunta">
-
-<p>3. Pedir ajuda é sinal de fraqueza?</p>
-
-<label><input type="radio" name="q3" value="0"> Sim</label>
-
-<label><input type="radio" name="q3" value="1"> Não</label>
-
-</div>
-
-<div class="pergunta">
-
-<p>4. O bullying pode prejudicar a saúde mental?</p>
-
-<label><input type="radio" name="q4" value="1"> Sim</label>
-
-<label><input type="radio" name="q4" value="0"> Não</label>
-
-</div>
-
-<div class="pergunta">
-
-<p>5. Dormir bem ajuda na saúde mental?</p>
-
-<label><input type="radio" name="q5" value="1"> Sim</label>
-
-<label><input type="radio" name="q5" value="0"> Não</label>
-
-</div>
-
-<button type="button" onclick="corrigirQuiz()">
-
-Ver Resultado
-
+<button onclick="quizResposta(true)">
+Sim
 </button>
 
-</form>
+
+<button onclick="quizResposta(false)">
+Não
+</button>
+
+
+
+<p>
+2 - Pedir ajuda quando necessário é importante?
+</p>
+
+
+<button onclick="quizResposta(true)">
+Sim
+</button>
+
+
+<button onclick="quizResposta(false)">
+Não
+</button>
+
+
+
+<p>
+3 - O bullying pode afetar a saúde mental?
+</p>
+
+
+<button onclick="quizResposta(true)">
+Sim
+</button>
+
+
+<button onclick="quizResposta(false)">
+Não
+</button>
+
+
 
 <h3 id="resultadoQuiz"></h3>
 
+
+</div>
+
+
 </section>
+
+
+
+
+
+
+<!-- ACESSIBILIDADE -->
+
 
 <section class="acessibilidade">
 
-<h2>Acessibilidade</h2>
+
+<h2>
+Acessibilidade
+</h2>
+
 
 <button onclick="modoEscuro()">
-
-Modo Escuro
-
+🌙 Modo Escuro
 </button>
+
 
 <button onclick="aumentarFonte()">
-
-Aumentar Fonte
-
+🔎 Aumentar Fonte
 </button>
+
 
 <button onclick="altoContraste()">
-
-Alto Contraste
-
+⚫ Alto Contraste
 </button>
+
+
 
 </section>
 
+
+
+
+
+
+
+
+<!-- FONTES -->
+
+
 <footer id="fontes">
 
-<h2>Fontes de Pesquisa</h2>
+
+<h2>
+Fontes utilizadas
+</h2>
+
 
 <ul>
 
+
 <li>
-<a href="https://www.gov.br/saude/" target="_blank">
 Ministério da Saúde
-</a>
 </li>
 
+
 <li>
-<a href="https://www.who.int/" target="_blank">
 Organização Mundial da Saúde (OMS)
-</a>
 </li>
 
-<li>
-<a href="https://bvsms.saude.gov.br/" target="_blank">
-Biblioteca Virtual em Saúde
-</a>
-</li>
 
 <li>
-<a href="https://www.unicef.org/brazil/" target="_blank">
 UNICEF Brasil
-</a>
 </li>
 
+
 <li>
-<a href="https://www.fiocruz.br/" target="_blank">
 Fiocruz
-</a>
 </li>
+
+
+<li>
+Biblioteca Virtual em Saúde</li>
+
 
 </ul>
 
+
+
 <p>
-
-Projeto desenvolvido para conscientização sobre Saúde Mental.
-
+Projeto educacional sobre saúde mental e acolhimento escolar.
 </p>
 
+
 </footer>
+
+
+
 
 </body>
 
