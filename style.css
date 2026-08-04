@@ -1,15 +1,26 @@
-/* Reset básico para remover margens padrão */
+/* RESET E VARIÁVEIS DE DESIGN */
+:root {
+    --bg-main: #0d0e12;
+    --bg-card: #16181e;
+    --bg-hover: #222630;
+    --accent: #ff3e3e;
+    --accent-hover: #d63030;
+    --text-primary: #ffffff;
+    --text-secondary: #9a9ea8;
+    --success: #00e676;
+    --border-color: #2a2e39;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
-/* Corpo da página: Centralizado e tema escuro */
 body {
-    background-color: #121212;
-    color: #e0e0e0;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,131 +28,155 @@ body {
     padding: 20px;
 }
 
-/* Container Principal (O "Ringue") */
+/* CONTAINER PRINCIPAL */
 .container {
-    background-color: #1e1e1e;
-    border: 2px solid #333;
-    border-radius: 12px;
-    max-width: 600px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    max-width: 650px;
     width: 100%;
-    padding: 30px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+    padding: 35px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7);
+    position: relative;
+    overflow: hidden;
 }
 
-/* Títulos principais */
-h1 {
-    color: #ff4757; /* Vermelho combate */
+/* CABEÇALHO */
+.header {
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.badge {
+    display: inline-block;
+    background-color: rgba(255, 62, 62, 0.15);
+    color: var(--accent);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
+    margin-bottom: 12px;
 }
 
-h3 {
-    color: #fff;
-    margin-bottom: 10px;
+h1 {
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+    font-weight: 800;
 }
 
-/* Subtítulo */
-p.subtitle {
-    text-align: center;
-    color: #aaa;
-    margin-bottom: 25px;
+.subtitle {
+    color: var(--text-secondary);
     font-size: 0.95rem;
 }
 
-/* Pergunta */
+/* BARRA DE PROGRESSO */
+.progress-container {
+    width: 100%;
+    height: 6px;
+    background-color: var(--bg-hover);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: var(--accent);
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+/* QUESTÕES */
 .question-title {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    color: #fff;
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    line-height: 1.4;
     font-weight: 600;
 }
 
-/* Botões de Opção */
 .options-list {
-    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .option-btn {
     width: 100%;
-    background-color: #2a2a2a;
-    color: #fff;
-    border: 1px solid #444;
-    padding: 12px 15px;
-    margin-bottom: 10px;
-    border-radius: 6px;
+    background-color: var(--bg-hover);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    padding: 16px 20px;
+    border-radius: 8px;
     text-align: left;
     cursor: pointer;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease;
     font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-/* Efeito ao passar o mouse na opção */
 .option-btn:hover {
-    background-color: #ff4757;
-    border-color: #ff4757;
-    transform: translateX(3px); /* Leve toque de resposta visual */
+    background-color: var(--accent);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 62, 62, 0.3);
 }
 
-/* Tela de Resultado */
+/* RESULTADOS */
 .result-box {
-    display: none;
     text-align: center;
+    padding: 10px 0;
+}
+
+.result-icon {
+    font-size: 3rem;
+    color: var(--accent);
+    margin-bottom: 15px;
 }
 
 .result-title {
-    font-size: 1.4rem;
-    color: #ff4757;
+    font-size: 1.6rem;
+    color: var(--accent);
     margin-bottom: 15px;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .result-desc {
     font-size: 1rem;
     line-height: 1.6;
-    margin-bottom: 25px;
-    color: #ddd;
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent);
+    text-align: left;
 }
 
-/* Botão Principal de Ação */
-.btn-restart {
-    background-color: #ff4757;
-    color: white;
+/* BOTÕES */
+.btn-primary, .btn-secondary {
     border: none;
-    padding: 12px 25px;
-    border-radius: 6px;
-    font-weight: bold;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 700;
     cursor: pointer;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: background-color 0.2s ease;
-}
-
-.btn-restart:hover {
-    background-color: #e03e4d;
-}
-
-/* Divisor */
-hr {
-    border: 0;
-    height: 1px;
-    background: #333;
-    margin: 30px 0;
-}
-
-/* Gerador de Conselhos */
-.generator-box {
-    text-align: center;
-}
-
-.advice-text {
-    font-style: italic;
-    margin: 15px 0;
-    color: #2ed573; /* Verde para destacar o conselho */
-    font-size: 1.05rem;
-    min-height: 48px;
-    display: flex;
+    letter-spacing: 1px;
+    transition: all 0.2s ease;
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
+    gap: 10px;
+    font-size: 0.9rem;
 }
