@@ -32,10 +32,20 @@
             <div class="result-icon" id="result-icon"><i class="fa-solid fa-trophy"></i></div>
             <h2 class="result-title" id="result-title">Seu Perfil</h2>
             <div class="result-desc" id="result-desc">...</div>
-            <button class="btn-primary" onclick="restartQuiz()">
-                <i class="fa-solid fa-rotate-right"></i> Refazer Diagnóstico
-            </button>
+            
+            <div class="actions-group">
+                <button class="btn-primary" onclick="restartQuiz()">
+                    <i class="fa-solid fa-rotate-right"></i> Refazer Diagnóstico
+                </button>
+                <button class="btn-secondary" onclick="shareResult()">
+                    <i class="fa-solid fa-share-nodes"></i> Compartilhar
+                </button>
+            </div>
         </section>
+
+        <div id="history-box" class="history-box" style="display: none;">
+            <p><i class="fa-solid fa-clock-rotate-left"></i> <strong>Último Resultado:</strong> <span id="last-result-text">--</span></p>
+        </div>
 
         <hr class="divider">
 
@@ -45,4 +55,11 @@
                 <p class="advice-text" id="advice-display">"Clique no botão para receber a real do tatame."</p>
             </div>
             <button class="btn-secondary" onclick="generateAdvice()">
-                <i class="fa-solid fa-dice">
+                <i class="fa-solid fa-dice"></i> Gerar Conselho
+            </button>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
