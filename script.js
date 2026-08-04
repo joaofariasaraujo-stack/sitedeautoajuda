@@ -1,439 +1,122 @@
-// =====================================
-// ABRIR CONTEÚDOS DOS CARDS
-// =====================================
+// array de perguntas, opções e pontuação do quiz
+const questions = [
+    {
+        question: "1. A vida te acerta um 'cruzado de esquerda' (um imprevisto pesado acontece). Qual é a sua reação?",
+        options: [
+            { text: "Fico reclamando no chão esperando alguém me ajudar.", type: "vitima" },
+            { text: "Saio batendo no ar feito maluco sem saber pra onde ir.", type: "desesperado" },
+            { text: "Recuo um passo, ajusto a guarda e analiso o próximo passo.", type: "faixapreta" }
+        ]
+    },
+    {
+        question: "2. Como está a sua rotina de 'treino' (seus objetivos diários)?",
+        options: [
+            { text: "Assisto mil tutoriais/livros, mas não pratico nada.", type: "vitima" },
+            { text: "Tento fazer tudo no primeiro dia, me esgoto e desisto na terça.", type: "desesperado" },
+            { text: "Faço o básico bem-feito todo santo dia, sem mimimi.", type: "faixapreta" }
+        ]
+    },
+    {
+        question: "3. O que você faz quando percebe que é muito ruim em alguma coisa nova?",
+        options: [
+            { text: "Fico com vergonha e nunca mais tento.", type: "vitima" },
+            { text: "Finjo que sei tudo para não parecer fraco.", type: "desesperado" },
+            { text: "Aceito que sou faixa-branca e sigo treinando pra melhorar.", type: "faixapreta" }
+        ]
+    }
+];
 
-function abrirConteudo(id) {
+// Perfis de resposta com sinceridade sem filtro
+const profiles = {
+    vitima: {
+        title: "Perfil: O 'Saco de Pancadas' Voluntário",
+        desc: "Sinceridade pura: você está se deixando vencer antes do round começar. Ficar reclamando no tatame não faz o adversário parar de bater. Pare de esperar um milagre, levante a guarda e assuma a responsabilidade pela sua vida."
+    },
+    desesperado: {
+        title: "Perfil: O Reativo Sem Gás",
+        desc: "Você gasta toda a sua energia no pânico do primeiro minuto. Quer resolver tudo pra ontem, mas não tem consistência. Respire, pare de dar soco no vento e foque em dar um passo de cada vez com técnica."
+    },
+    faixapreta: {
+        title: "Perfil: Mentalidade Faixa-Preta",
+        desc: "Você entende que apanhar faz parte do processo, desde que aprenda a se defender. Mantém a calma, aceita os erros sem drama e sabe que a constância supera qualquer talento natural. Siga o plano."
+    }
+};
 
-    const conteudos = document.querySelectorAll(".informacao");
+// Lista de conselhos aleatórios estilo dojo
+const advices = [
+    "Ninguém vai vir te salvar. O treino é seu, a vida é sua.",
+    "Estar cansado é normal. Desistir é opção de quem se acomodou.",
+    "Menos teoria no papel, mais repetição na prática.",
+    "O ego é o adversário que mais vai te nocautear. Mantenha a humildade.",
+    "Fazer o básico bem-feito todo dia é melhor do que dar um show uma vez no ano.",
+    "Apanhou da rotina hoje? Limpe a poeira, ajuste a postura e volte amanhã."
+];
 
-    conteudos.forEach(function(item){
+// Estado do quiz
+let currentQuestion = 0;
+let scores = { vitima: 0, desesperado: 0, faixapreta: 0 };
 
-        item.style.display = "none";
+// Carrega a pergunta atual no HTML
+function loadQuestion() {
+    const q = questions[currentQuestion];
+    document.getElementById('question-text').innerText = q.question;
+    const container = document.getElementById('options-container');
+    container.innerHTML = '';
 
+    q.options.forEach(opt => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn';
+        btn.innerText = opt.text;
+        btn.onclick = () => selectOption(opt.type);
+        container.appendChild(btn);
     });
+}
 
+// Processa a escolha do usuário
+function selectOption(type) {
+    scores[type]++;
+    currentQuestion++;
 
-    const escolhido = document.getElementById(id);
+    if (currentQuestion < questions.length) {
+        loadQuestion();
+    } else {
+        showResult();
+    }
+}
 
+// Calcula e exibe o resultado
+function showResult() {
+    document.getElementById('quiz-section').style.display = 'none';
+    document.getElementById('result-section').style.display = 'block';
 
-    if(escolhido){
-
-        escolhido.style.display = "block";
-
-        escolhido.scrollIntoView({
-            behavior:"smooth"
-        });
-
+    let winner = 'vitima';
+    if (scores.desesperado >= scores.vitima && scores.desesperado >= scores.faixapreta) {
+        winner = 'desesperado';
+    }
+    if (scores.faixapreta >= scores.vitima && scores.faixapreta >= scores.desesperado) {
+        winner = 'faixapreta';
     }
 
+    document.getElementById('result-title').innerText = profiles[winner].title;
+    document.getElementById('result-desc').innerText = profiles[winner].desc;
 }
 
-
-
-// =====================================
-// MENSAGEM INICIAL
-// =====================================
-
-function abrirMensagem(){
-
-    alert(
-    "💙 Bem-vindo ao VivaMente!\n\n" +
-    "Aqui você encontrará informações para cuidar da sua saúde mental, " +
-    "desenvolver empatia e encontrar apoio."
-    );
-
+// Reinicia o quiz
+function restartQuiz() {
+    currentQuestion = 0;
+    scores = { vitima: 0, desesperado: 0, faixapreta: 0 };
+    document.getElementById('quiz-section').style.display = 'block';
+    document.getElementById('result-section').style.display = 'none';
+    loadQuestion();
 }
 
-
-
-
-
-// =====================================
-// PORTAL DE ESCUTA
-// =====================================
-
-
-function enviarDesabafo(){
-
-
-    const texto =
-    document.getElementById("desabafo").value;
-
-
-    const resposta =
-    document.getElementById("respostaEscuta");
-
-
-
-    if(texto.trim() === ""){
-
-
-        resposta.innerHTML =
-        `
-        <div class="erro">
-
-        ⚠️ Escreva algo antes de enviar.
-
-        </div>
-        `;
-
-
-        return;
-
-    }
-
-
-
-    resposta.innerHTML =
-
-    `
-    <div class="acolhimento">
-
-    <h3>
-    💙 Obrigado por compartilhar.
-    </h3>
-
-
-    <p>
-    Seus sentimentos são importantes.
-    Falar sobre o que sentimos é uma atitude de coragem.
-    </p>
-
-
-    <p>
-    Se precisar, procure um professor,
-    pedagogo, direção da escola,
-    familiares ou outro adulto de confiança.
-    </p>
-
-
-    <strong>
-    Você merece ser ouvido.
-    </strong>
-
-
-    </div>
-    `;
-
-
-
-    document.getElementById("desabafo").value="";
-
-
+// Gera um conselho aleatório
+function generateAdvice() {
+    const randomIndex = Math.floor(Math.random() * advices.length);
+    document.getElementById('advice-display').innerText = `"${advices[randomIndex]}"`;
 }
 
-
-
-
-
-
-
-
-// =====================================
-// SISTEMA DE HUMOR
-// =====================================
-
-
-function mostrarHumor(sentimento){
-
-
-    const resultado =
-    document.getElementById("resultadoHumor");
-
-
-    resultado.innerHTML =
-
-    `
-    Hoje você informou que está:
-    <strong>${sentimento}</strong>
-    <br><br>
-
-    Lembre-se:
-    todos os sentimentos são importantes.
-    Cuide de você. 💙
-
-    `;
-
-}
-
-
-
-
-
-
-
-// =====================================
-// QUIZ
-// =====================================
-
-
-let pontosQuiz = 0;
-
-let respostasRespondidas = 0;
-
-
-
-function quizResposta(correta){
-
-
-    respostasRespondidas++;
-
-
-
-    if(correta){
-
-        pontosQuiz++;
-
-    }
-
-
-
-    if(respostasRespondidas === 3){
-
-
-        const resultado =
-        document.getElementById("resultadoQuiz");
-
-
-
-        if(pontosQuiz === 3){
-
-
-            resultado.innerHTML =
-            "🏆 Excelente! Você demonstrou conhecimento sobre saúde mental.";
-
-
-        }
-
-        else if(pontosQuiz === 2){
-
-
-            resultado.innerHTML =
-            "😊 Muito bem! Continue aprendendo sobre cuidado e empatia.";
-
-
-        }
-
-        else{
-
-
-            resultado.innerHTML =
-            "📚 Continue estudando. Aprender sobre saúde mental ajuda a todos.";
-
-
-        }
-
-
-
-        pontosQuiz = 0;
-
-        respostasRespondidas = 0;
-
-
-    }
-
-
-}
-
-
-
-
-
-
-
-
-// =====================================
-// MODO ESCURO
-// =====================================
-
-
-function modoEscuro(){
-
-
-    document.body.classList.toggle("dark");
-
-
-}
-
-
-
-
-
-
-
-// =====================================
-// ALTO CONTRASTE
-// =====================================
-
-
-function altoContraste(){
-
-
-    document.body.classList.toggle("contraste");
-
-
-}
-
-
-
-
-
-
-
-// =====================================
-// AUMENTAR FONTE
-// =====================================
-
-
-let fonteAtual = 100;
-
-
-function aumentarFonte(){
-
-
-    fonteAtual += 10;
-
-
-    document.body.style.fontSize =
-    fonteAtual + "%";
-
-
-}
-
-
-
-
-
-
-
-
-// =====================================
-// VOLTAR AO TOPO
-// =====================================
-
-
-const botaoTopo =
-document.getElementById("topo");
-
-
-
-window.addEventListener("scroll",function(){
-
-
-    if(window.scrollY > 400){
-
-
-        botaoTopo.style.display="flex";
-
-
-    }
-
-    else{
-
-
-        botaoTopo.style.display="none";
-
-
-    }
-
-
-});
-
-
-
-
-botaoTopo.addEventListener("click",function(){
-
-
-    window.scrollTo({
-
-        top:0,
-
-        behavior:"smooth"
-
-    });
-
-
-});
-
-
-
-
-
-
-
-
-
-// =====================================
-// ANIMAÇÃO DE APARECER AO ROLAR
-// =====================================
-
-
-const secoes =
-document.querySelectorAll("section");
-
-
-
-function aparecer(){
-
-
-    secoes.forEach(function(secao){
-
-
-        const altura =
-        secao.getBoundingClientRect().top;
-
-
-
-        if(altura < window.innerHeight - 100){
-
-
-            secao.classList.add("mostrar");
-
-
-        }
-
-
-    });
-
-
-}
-
-
-
-window.addEventListener(
-"scroll",
-aparecer
-);
-
-
-
-aparecer();
-
-
-
-
-
-
-
-
-// =====================================
-// FECHAR CONTEÚDOS AO CARREGAR
-// =====================================
-
-
-window.addEventListener("load",function(){
-
-
-    const infos =
-    document.querySelectorAll(".informacao");
-
-
-    infos.forEach(function(info){
-
-        info.style.display="none";
-
-    });
-
-
+// Inicialização automática ao carregar a página
+document.addEventListener('DOMContentLoaded', () => {
+    loadQuestion();
 });

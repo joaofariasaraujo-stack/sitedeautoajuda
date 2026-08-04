@@ -1,717 +1,147 @@
-/* =================================
-   VIVAMENTE - STYLE PROFISSIONAL
-   Saúde Mental
-================================= */
-
-
+/* Reset básico para remover margens padrão */
 * {
-
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins', sans-serif;
-
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
-html {
-
-    scroll-behavior:smooth;
-
-}
-
-
-:root {
-
-    --vermelho:#c1121f;
-    --azul:#219ebc;
-    --azul-claro:#8ecae6;
-    --fundo:#f4f9ff;
-    --texto:#1d3557;
-    --branco:#ffffff;
-
-}
-
-
-
+/* Corpo da página: Centralizado e tema escuro */
 body {
-
-    background:var(--fundo);
-
-    color:var(--texto);
-
-    transition:.4s;
-
+    background-color: #121212;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
 }
 
-
-
-
-/* ===============================
-HEADER
-================================ */
-
-
-header {
-
-    background:
-
-    linear-gradient(
-        90deg,
-        var(--vermelho),
-        var(--azul)
-    );
-
-    color:white;
-
-    text-align:center;
-
-    padding:30px;
-
-    border-bottom:8px solid var(--azul-claro);
-
+/* Container Principal (O "Ringue") */
+.container {
+    background-color: #1e1e1e;
+    border: 2px solid #333;
+    border-radius: 12px;
+    max-width: 600px;
+    width: 100%;
+    padding: 30px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
 }
 
-
-
-.logo {
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    gap:15px;
-
+/* Títulos principais */
+h1 {
+    color: #ff4757; /* Vermelho combate */
+    text-align: center;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-
-.logo i {
-
-    font-size:40px;
-
+h3 {
+    color: #fff;
+    margin-bottom: 10px;
 }
 
-
-header h1 {
-
-    font-size:40px;
-
+/* Subtítulo */
+p.subtitle {
+    text-align: center;
+    color: #aaa;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
 }
 
-
-
-header p {
-
-    font-size:18px;
-
-    margin:10px;
-
+/* Pergunta */
+.question-title {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #fff;
+    font-weight: 600;
 }
 
-
-
-
-
-/* ===============================
-MENU
-================================ */
-
-
-nav {
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:15px;
-
-    flex-wrap:wrap;
-
+/* Botões de Opção */
+.options-list {
+    list-style: none;
 }
 
-
-
-nav a {
-
-    color:white;
-
-    text-decoration:none;
-
-    font-weight:bold;
-
-    padding:10px 20px;
-
-    border-radius:30px;
-
-    transition:.3s;
-
+.option-btn {
+    width: 100%;
+    background-color: #2a2a2a;
+    color: #fff;
+    border: 1px solid #444;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    font-size: 0.95rem;
 }
 
-
-
-nav a:hover {
-
-    background:white;
-
-    color:var(--azul);
-
+/* Efeito ao passar o mouse na opção */
+.option-btn:hover {
+    background-color: #ff4757;
+    border-color: #ff4757;
+    transform: translateX(3px); /* Leve toque de resposta visual */
 }
 
-
-
-
-
-/* ===============================
-SEÇÕES
-================================ */
-
-
-section {
-
-    padding:60px 10%;
-
-    display:block;
-
+/* Tela de Resultado */
+.result-box {
+    display: none;
+    text-align: center;
 }
 
-
-
-h2 {
-
-    text-align:center;
-
-    color:var(--vermelho);
-
-    margin-bottom:35px;
-
-    font-size:32px;
-
+.result-title {
+    font-size: 1.4rem;
+    color: #ff4757;
+    margin-bottom: 15px;
+    font-weight: bold;
 }
 
-
-
-
-
-/* ===============================
-HERO
-================================ */
-
-
-.hero {
-
-    display:flex;
-
-    align-items:center;
-
-    gap:40px;
-
+.result-desc {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: #ddd;
 }
 
-
-
-.hero-text {
-
-    flex:1;
-
+/* Botão Principal de Ação */
+.btn-restart {
+    background-color: #ff4757;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background-color 0.2s ease;
 }
 
-
-
-.hero-text h2 {
-
-    text-align:left;
-
-    color:var(--azul);
-
-    font-size:42px;
-
+.btn-restart:hover {
+    background-color: #e03e4d;
 }
 
-
-
-.hero-text p {
-
-    font-size:18px;
-
+/* Divisor */
+hr {
+    border: 0;
+    height: 1px;
+    background: #333;
+    margin: 30px 0;
 }
 
-
-
-.hero-image {
-
-    flex:1;
-
+/* Gerador de Conselhos */
+.generator-box {
+    text-align: center;
 }
 
-
-
-.hero-image img {
-
-    width:100%;
-
-    border-radius:30px;
-
-    box-shadow:0 10px 30px #0003;
-
-}
-
-
-
-
-/* ===============================
-BOTÕES
-================================ */
-
-
-button {
-
-    background:var(--vermelho);
-
-    color:white;
-
-    border:none;
-
-    padding:14px 25px;
-
-    border-radius:30px;
-
-    cursor:pointer;
-
-    font-weight:bold;
-
-    transition:.3s;
-
-}
-
-
-
-button:hover {
-
-    background:var(--azul);
-
-    transform:scale(1.05);
-
-}
-
-
-
-
-/* ===============================
-CARDS
-================================ */
-
-
-.cards {
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(250px,1fr));
-
-    gap:25px;
-
-}
-
-
-
-.card {
-
-    background:white;
-
-    padding:30px;
-
-    text-align:center;
-
-    border-radius:25px;
-
-    border-top:8px solid var(--azul);
-
-    box-shadow:
-    0 10px 25px #0002;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-}
-
-
-
-.card:hover {
-
-    transform:translateY(-10px);
-
-}
-
-
-
-.card i {
-
-    color:var(--vermelho);
-
-    font-size:45px;
-
-    margin-bottom:15px;
-
-}
-
-
-
-.card span {
-
-    color:var(--azul);
-
-    font-weight:bold;
-
-}
-
-
-
-
-
-/* ===============================
-CONTEÚDOS
-================================ */
-
-
-#conteudoExtra {
-
-    margin-top:40px;
-
-}
-
-
-
-.informacao {
-
-    background:white;
-
-    padding:30px;
-
-    border-radius:25px;
-
-    box-shadow:0 10px 25px #0002;
-
-    margin-bottom:20px;
-
-}
-
-
-
-.informacao h3 {
-
-    color:var(--azul);
-
-    font-size:25px;
-
-}
-
-
-
-
-
-/* ===============================
-HUMOR
-================================ */
-
-
-.humor {
-
-    background:#e8f7fc;
-
-    border-radius:30px;
-
-    text-align:center;
-
-}
-
-
-
-.emocoes {
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:20px;
-
-    flex-wrap:wrap;
-
-}
-
-
-
-.emocoes button {
-
-    font-size:35px;
-
-    background:var(--azul);
-
-    width:80px;
-
-    height:80px;
-
-}
-
-
-
-
-/* ===============================
-PORTAL ESCUTA
-================================ */
-
-
-#escuta {
-
-    background:
-
-    linear-gradient(
-        135deg,
-        var(--azul),
-        var(--azul-claro)
-    );
-
-    color:white;
-
-    border-radius:30px;
-
-}
-
-
-
-#escuta h2 {
-
-    color:white;
-
-}
-
-
-
-textarea {
-
-    width:100%;
-
-    height:160px;
-
-    padding:20px;
-
-    border-radius:20px;
-
-    border:none;
-
-    font-size:16px;
-
-}
-
-
-
-
-.acolhimento {
-
-    margin-top:20px;
-
-    background:white;
-
-    color:#222;
-
-    padding:25px;
-
-    border-radius:20px;
-
-}
-
-
-
-
-/* ===============================
-QUIZ
-================================ */
-
-
-.quiz-box {
-
-    background:white;
-
-    padding:30px;
-
-    border-radius:25px;
-
-    box-shadow:0 10px 25px #0002;
-
-}
-
-
-
-.quiz-box p {
-
-    margin-top:25px;
-
-    font-weight:bold;
-
-}
-
-
-
-
-
-/* ===============================
-ACESSIBILIDADE
-================================ */
-
-
-.acessibilidade {
-
-    text-align:center;
-
-}
-
-
-
-
-/* ===============================
-BOTÃO TOPO
-================================ */
-
-
-#topo {
-
-    position:fixed;
-
-    right:20px;
-
-    bottom:20px;
-
-    width:55px;
-
-    height:55px;
-
-    border-radius:50%;
-
-    display:none;
-
-    justify-content:center;
-
-    align-items:center;
-
-    z-index:999;
-
-}
-
-
-
-
-/* ===============================
-FOOTER
-================================ */
-
-
-footer {
-
-    background:var(--azul);
-
-    color:white;
-
-    text-align:center;
-
-    padding:40px;
-
-}
-
-
-
-footer li {
-
-    list-style:none;
-
-}
-
-
-
-
-
-/* ===============================
-MODO ESCURO
-================================ */
-
-
-.dark {
-
-    background:#102a43;
-
-    color:white;
-
-}
-
-
-
-.dark .card,
-.dark .informacao,
-.dark .quiz-box {
-
-    background:#183b56;
-
-    color:white;
-
-}
-
-
-
-
-
-/* ===============================
-ALTO CONTRASTE
-================================ */
-
-
-.contraste {
-
-    filter:contrast(160%);
-
-}
-
-
-
-
-
-/* ===============================
-RESPONSIVO
-================================ */
-
-
-@media(max-width:850px){
-
-
-.hero {
-
-    flex-direction:column;
-
-}
-
-
-
-.hero-text h2 {
-
-    font-size:30px;
-
-}
-
-
-
-section {
-
-    padding:40px 5%;
-
-}
-
-
-
-header h1 {
-
-    font-size:30px;
-
-}
-
-
+.advice-text {
+    font-style: italic;
+    margin: 15px 0;
+    color: #2ed573; /* Verde para destacar o conselho */
+    font-size: 1.05rem;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
