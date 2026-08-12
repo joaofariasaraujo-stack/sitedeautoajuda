@@ -3,62 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dojo da Mente | Autoajuda Sem Mimimi</title>
+    <title>Dojo Mental | Vencendo o Bullying e o Racismo</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="container">
-        <header class="header">
-            <div class="badge"><i class="fa-solid fa-user-ninja"></i> Diagnóstico de Postura</div>
-            <h1>Dojo da Mente</h1>
-            <p class="subtitle">Aprenda a apanhar da vida sem perder a guarda.</p>
-        </header>
-
-        <main id="quiz-section">
-            <div class="progress-container">
-                <div class="progress-bar" id="progress-bar"></div>
-            </div>
-            <div class="progress-text" id="progress-text">Pergunta 1 de 6</div>
-
-            <div class="question-box">
-                <h2 class="question-title" id="question-text">Carregando pergunta...</h2>
-                <div class="options-list" id="options-container"></div>
-            </div>
-        </main>
-
-        <section id="result-section" class="result-box" style="display: none;">
-            <div class="result-icon" id="result-icon"><i class="fa-solid fa-trophy"></i></div>
-            <h2 class="result-title" id="result-title">Seu Perfil</h2>
-            <div class="result-desc" id="result-desc">...</div>
-            
-            <div class="actions-group">
-                <button class="btn-primary" onclick="restartQuiz()">
-                    <i class="fa-solid fa-rotate-right"></i> Refazer Diagnóstico
-                </button>
-                <button class="btn-secondary" onclick="shareResult()">
-                    <i class="fa-solid fa-share-nodes"></i> Compartilhar
-                </button>
-            </div>
-        </section>
-
-        <div id="history-box" class="history-box" style="display: none;">
-            <p><i class="fa-solid fa-clock-rotate-left"></i> <strong>Último Resultado:</strong> <span id="last-result-text">--</span></p>
+    <header class="navbar">
+        <div class="logo">
+            <span class="logo-icon">🥊🥋</span>
+            <span class="logo-text">DOJO <strong>MENTAL</strong></span>
         </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#filosofia">Filosofia</a></li>
+                <li><a href="#quiz">Quiz (15 Percepts)</a></li>
+                <li><a href="#comunidade">Muro de Apoio</a></li>
+                <li><a href="#denuncia">Canal de Ajuda</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <hr class="divider">
-
-        <footer class="generator-box">
-            <h3><i class="fa-solid fa-bolt"></i> Puxão de Orelha Sem Filtro</h3>
-            <div class="advice-card">
-                <p class="advice-text" id="advice-display">"Clique no botão para receber a real do tatame."</p>
+    <section id="inicio" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="badge">PROJETO ANTI-BULLYING & ANTI-RACISMO</span>
+            <h1>A ESQUIVA DO BOXE.<br>O CONTROLE DO JIU-JITSU.</h1>
+            <p>Sua mente é seu maior tatame. Aprenda a neutralizar provocações, blindar sua auto-estima e construir um ambiente escolar seguro e respeitoso.</p>
+            <div class="hero-buttons">
+                <a href="#quiz" class="btn btn-primary">Iniciar Treino (Quiz 15 Q)</a>
+                <a href="#comunidade" class="btn btn-secondary">Entrar no Muro de Apoio</a>
             </div>
-            <button class="btn-secondary" onclick="generateAdvice()">
-                <i class="fa-solid fa-dice"></i> Gerar Conselho
-            </button>
-        </footer>
-    </div>
+        </div>
+    </section>
+
+    <section id="filosofia" class="section container">
+        <h2 class="section-title">PILARES DA DEFESA MENTAL</h2>
+        <p class="section-subtitle">Nas artes marciais, a força bruta é inútil sem estratégia e inteligência emocional.</p>
+        
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon">🥊</div>
+                <h3>Esquiva Consciente (Boxe)</h3>
+                <p>Não absorva palavras de ódio ou insultos. A esquiva no boxe ensina que você não precisa rebater todo golpe; faça o preconceito perder a força no ar.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🥋</div>
+                <h3>Base Forte (Jiu-Jitsu)</h3>
+                <p>Mantenha seus pés firmes no chão. Ter uma "base" significa conhecer seu valor e sua história, impedindo que piadas racistas derrubem sua estrutura.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🛡️</div>
+                <h3>Domínio e Defesa</h3>
+                <p>A arte suave prioriza a imobilização do conflito sem violência. Imponha limites claros, reporte e proteja quem está vulnerável.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="quiz" class="section bg-dark">
+        <div class="container">
+            <h2 class="section-title text-light">QUIZ: AVALIAÇÃO DE COMBATE</h2>
+            <p class="section-subtitle text-muted">15 Perguntas para testar suas táticas contra o bullying e o racismo no colégio.</p>
+
+            <div class="quiz-card" id="quiz-container">
+                <div class="quiz-header">
+                    <span id="quiz-progress">Pergunta 1 de 15</span>
+                    <div class="progress-bar-bg"><div id="progress-bar" class="progress-bar-fill"></div></div>
+                </div>
+
+                <div id="quiz-body">
+                    <h3 id="question-text">Carregando pergunta...</h3>
+                    <div id="options-container" class="options-grid"></div>
+                    <div id="feedback-box" class="feedback-box hidden"></div>
+                </div>
+
+                <div class="quiz-footer">
+                    <button id="next-btn" class="btn btn-primary hidden">Próxima Pergunta ➔</button>
+                </div>
+            </div>
+
+            <div id="result-box" class="quiz-card hidden text-center">
+                <div class="medal-icon">🏆</div>
+                <h2>TREINAMENTO CONCLUÍDO!</h2>
+                <p id="result-score" class="result-score"></p>
+                <div id="result-rank" class="rank-badge"></div>
+                <p id="result-desc" class="result-desc"></p>
+                <button onclick="restartQuiz()" class="btn btn-primary">Refazer Treinamento</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="comunidade" class="section container">
+        <h2 class="section-title">MURO DE APOIO & TROCA DE EXPERIÊNCIAS</h2>
+        <p class="section-subtitle">Um espaço seguro estilo "Roll de Treino": desabafe, ajude colegas e fortaleça nossa comunidade.</p>
+
+        <div class="forum-layout">
+            <div class="forum-form-card">
+                <h3>💬 Deixe sua mensagem ou apoio</h3>
+                <form id="post-form">
+                    <div class="form-group">
+                        <label for="post-author">Codinome / Nome de Guerra:</label>
+                        <input type="text" id="post-author" placeholder="Ex: GuerreiroFaixaAzul" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="post-category">Categoria:</label>
+                        <select id="post-category">
+                            <option value="Apoio">Apoio Emocional</option>
+                            <option value="Desabafo">Desabafo</option>
+                            <option value="Superação">Relato de Superação</option>
+                            <option value="Dúvida">Dúvida / Conselho</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="post-content">Sua Mensagem:</label>
+                        <textarea id="post-content" rows="4" placeholder="Compartilhe seu relato ou uma palavra de encorajamento..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary full-width">Publicar no Muro</button>
+                </form>
+            </div>
+
+            <div class="forum-feed" id="forum-feed">
+                </div>
+        </div>
+    </section>
+
+    <section id="denuncia" class="section bg-dark">
+        <div class="container">
+            <h2 class="section-title text-light">CANAL DE RECLAMAÇÕES E AJUDA</h2>
+            <p class="section-subtitle text-muted">Relate episódios de preconceito ou busque auxílio direto de instituições especializadas.</p>
+
+            <div class="denuncia-grid">
+                <div class="denuncia-card">
+                    <h3>🚨 Enviar Relato / Reclamação Escolar</h3>
+                    <form id="denuncia-form">
+                        <div class="form-group">
+                            <label for="den-assunto">Assunto principal:</label>
+                            <select id="den-assunto">
+                                <option>Racismo / Injuría Racial</option>
+                                <option>Bullying Verbal / Perseguição</option>
+                                <option>Cyberbullying / Redes Sociais</option>
+                                <option>Exclusão no Ambiente Escolar</option>
+                                <option>Outro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="den-texto">Descrição detalhada do ocorrido:</label>
+                            <textarea id="den-texto" rows="4" placeholder="Escreva aqui com o máximo de detalhes que desejar..." required></textarea>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="den-anonimo" checked>
+                            <label for="den-anonimo">Desejo enviar de forma 100% Anônima</label>
+                        </div>
+                        <button type="submit" class="btn btn-danger full-width">Enviar Relato com Segurança</button>
+                    </form>
+                </div>
+
+                <div class="emergency-card">
+                    <h3>📞 Canais Oficiais de Urgência</h3>
+                    <p>Se você precisa de ajuda profissional, apoio emocional imediato ou registrar denúncias de crimes:</p>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📢</div>
+                        <div>
+                            <strong>Disque 100</strong>
+                            <p>Diretos Humanos - Denúncias de racismo e graves violações.</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">💙</div>
+                        <div>
+                            <strong>CVV - Ligue 188</strong>
+                            <p>Centro de Valorização da Vida - Apoio emocional gratuito 24h.</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">🌐</div>
+                        <div>
+                            <strong>SaferNet Brasil</strong>
+                            <p>Canal de denúncias contra crimes e violência na cibernética.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <p>© 2026 Dojo Mental - Respeito, Disciplina e Igualdade no Colégio.</p>
+            <p class="footer-sub">Projeto educativo de apoio contra o Bullying e Racismo escolar.</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
